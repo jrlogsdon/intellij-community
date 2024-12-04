@@ -17,8 +17,8 @@ import org.jetbrains.jewel.markdown.WithInlineMarkdown
 import org.jetbrains.jewel.markdown.WithTextContent
 import org.jetbrains.jewel.markdown.extensions.MarkdownProcessorExtension
 
-@VisibleForTesting
-internal fun Node.readInlineContent(
+// public for use from extensions that need to process InlineContent
+public fun Node.readInlineContent(
     markdownProcessor: MarkdownProcessor,
     extensions: List<MarkdownProcessorExtension>,
 ): List<InlineMarkdown> = buildList {
