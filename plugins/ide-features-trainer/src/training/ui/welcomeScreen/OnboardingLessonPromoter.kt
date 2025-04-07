@@ -9,6 +9,7 @@ import com.intellij.openapi.diagnostic.logger
 import com.intellij.openapi.projectRoots.Sdk
 import com.intellij.openapi.wm.BannerStartPagePromoter
 import com.intellij.ui.scale.JBUIScale
+import com.intellij.util.PlatformUtils
 import com.intellij.util.ui.JBUI
 import org.jetbrains.annotations.ApiStatus
 import org.jetbrains.annotations.Nls
@@ -48,7 +49,8 @@ open class OnboardingLessonPromoter(@NonNls protected val lessonId: String,
            !PropertiesComponent.getInstance().getBoolean(PROMO_HIDDEN, false) &&
            RecentProjectsManagerBase.getInstanceEx().getRecentPaths().size < 5 &&
            LessonStateManager.getStateFromBase(lessonId) == LessonState.NOT_PASSED &&
-           !NewUsersOnboardingExperimentAccessor.isExperimentEnabled()
+           !NewUsersOnboardingExperimentAccessor.isExperimentEnabled() &&
+           PlatformUtils.isJetBrainsProduct()
   }
 
   override val headerLabel: String
