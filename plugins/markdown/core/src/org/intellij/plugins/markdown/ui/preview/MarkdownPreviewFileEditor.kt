@@ -199,7 +199,7 @@ class MarkdownPreviewFileEditor(
           Notification(
             "Markdown",
             MarkdownBundle.message("markdown.settings.notification.title"),
-            MarkdownBundle.message("markdown.settings.preview.provider.not.available", providerInfo.name, availableProvider.providerInfo.name),
+            MarkdownBundle.message("markdown.settings.preview.provider.not.available", preferredProvider.providerInfo.name, availableProvider.providerInfo.name),
             NotificationType.WARNING
           ),
           project
